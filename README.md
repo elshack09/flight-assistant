@@ -5,3 +5,5 @@ The Flight Assistant is a app that helps Flight Attendants better assist custome
 
 ![Wireframe](https://github.com/elshack09/flight-assistant/blob/master/images/IMG_3611.JPG)
 
+# ERD 
+![ERD](https://github.com/elshack09/flight-assistant/blob/master/images/erd.jpg)
