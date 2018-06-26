@@ -5,7 +5,7 @@ const userSchema = new Schema({
     name: { type: String, required: true },
     email: { type: String, required: true },
     seatNumber: { type: String, required: true },
-    flightNumber: { type: number, required: true }
+    flightNumber: { type: Number, required: true }
 });
 
 
