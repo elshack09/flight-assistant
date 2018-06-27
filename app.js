@@ -1,15 +1,12 @@
+require('dotenv').config()
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
-require('./models/User');
-require('./models/Food');
-require('./models/Mood');
-// require('dotenv').config();
+mongoose.connect(process.env.MONGODB_URI);
 
-
-
+const connection = mongoose.connection
 mongoose.connect('mongodb://localhost/flight-attendant')
   .then(() => {
     console.log('   ===============================  ')
@@ -21,10 +18,10 @@ mongoose.connect('mongodb://localhost/flight-attendant')
   })
 
 
-const indexRouter = require('./routes/index');
+const indexRouter = require('./routes/food');
 const usersRouter = require('./routes/users');
 
-const app = express();
+let app = express();
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -37,10 +34,8 @@ app.get('/', (req, res) => {
 })
 
 
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-
-const port = process.env.PORT || 3000;
-app.listen(3000, () => console.log('listening!'));
 module.exports = app;
