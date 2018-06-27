@@ -40,4 +40,7 @@ app.get('/', (req, res) => {
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+
+const port = process.env.PORT || 3000;
+app.listen(3000, () => console.log('listening!'));
 module.exports = app;
