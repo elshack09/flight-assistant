@@ -1,6 +1,6 @@
 let express = require('express');
 let router = express.Router();
-const { Food } = require('../models/Food');
+const { Food } = require('../../models/Food');
 
 
 // router.get('/', function(req, res, next) {
