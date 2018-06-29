@@ -1,5 +1,6 @@
-const mongoose = require('mongoose').Schema
-const {Schema} =mongoose;
+const mongoose = require('mongoose');
+const { Schema } =mongoose;
+
 const moodSchema = new Schema({
     imageMood: String,
     mood: String
