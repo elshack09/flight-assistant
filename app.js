@@ -18,8 +18,9 @@ connection.on("error", err => {
 
 
 // requiring routes 
-const users = require('./routes/api/users');
 const food = require('./routes/api/food');
+const users = require('./routes/api/users');
+
 const mood = require('./routes/api/mood')
 
 

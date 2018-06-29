@@ -1,11 +1,12 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const { Food } = require('../../models/Food');
+const Food  = require("../../models/Food");
 
 // GET request
-// Show foods 
+// Show foods
 router.get("/", (req, res) => {
-  Food.find().then(foods => {
+  Food.find()
+    .then(foods => {
       res.json(foods);
       console.log(foods);
     })
@@ -30,11 +31,9 @@ router.put("/food/:id", (req, res) => {
     snack: req.body.snack,
     drink: req.body.drink
   };
-  Foods
-  .findByIdAndUpdate(req.params.id, { $set: foods }, { new: true }).then(
+  Foods.findByIdAndUpdate(req.params.id, { $set: foods }, { new: true }).then(
     foods => res.json(foods).catch((err = console.log(err)))
   );
 });
-
 
 module.exports = router;

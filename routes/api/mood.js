@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Mood } = require('../../models/Mood');
+const Mood = require('../../models/Mood');
 
 // GET request
 // Show moods api/mood
