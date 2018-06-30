@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Navbar from './components/Homepage';
 import './App.css';
+
+
 
 
 
@@ -8,8 +12,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-       <h1>React Working!!</h1>
-       <input type="text"></input>
+
+       <Navbar />
+       
+      
       </div>
     );
   }
