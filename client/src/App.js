@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Navbar from './components/Homepage';
+import Homepage from './components/Homepage';
 import './App.css';
+import Emergencymodal from './components/Airlinenavbar';
 
 
 
@@ -12,8 +13,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
-       <Navbar />
+      <Emergencymodal/>
+       <Homepage />
+       
        
       
       </div>
