@@ -17,7 +17,7 @@ mongoose.connection.on("error", error => {
 // user data
 User.remove({}).then(() => {
   const users = new User({
-    name: "Andrea Smith",
+    fullname: "Andrea Smith",
     email: "andreasmith@gmail.com",
     seatNumber: "12B",
     flightNumber: 2703

@@ -26,7 +26,7 @@ const Home = props => {
                <p className="lead">
               Thank you for choosing Rosy Airlines. If you will like services
               during the duration of your flight, please click the "Request
-              Services" button</p><Button color="danger">Request Services</Button> <p></p>
+              Services" button</p><Button color="danger" >Request Services</Button> <p></p>
           </CardSubtitle>
         
           <CardText>
