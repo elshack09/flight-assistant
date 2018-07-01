@@ -21,7 +21,7 @@ export default class Airlinenavbar extends React.Component {
       <div>
         <Navbar color="faded" light>
           <NavbarBrand href="/" className="mr-auto">Rosy Airlines</NavbarBrand>
-          <Button color="danger">Emergency</Button>
+          <Button color="danger" size="lg" >Emergency</Button>
           <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
           <Collapse isOpen={!this.state.collapsed} navbar>
             <Nav navbar>

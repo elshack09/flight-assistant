@@ -4,7 +4,7 @@ const Users = require("../../models/Users");
 
 // GET request
 // Show users api/users/login
-router.get("/", (req, res) => {
+router.get("/guests", (req, res) => {
   Users.find()
     .then(users => {
       res.json(users);
