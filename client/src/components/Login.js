@@ -1,12 +1,15 @@
 import React from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import axios from "axios";
 
 class Login extends React.Component {
   constructor() {
     super();
     this.state = {
-      name: "",
-      email: ""
+      name: '',
+      email: '',
+      seatNumber: '',
+      flightNumber: ''
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -15,13 +18,18 @@ class Login extends React.Component {
     guestLogin.preventDefault();
     const guest = {
       name: this.state.name,
-      email: this.state.email
+      email: this.state.email,
+      seatNumber: this.state.seatNumber,
+      flightNumber: this.state.flightNumber
     };
-    console.log(guest)
+    // creating users & storing in database
+    axios
+      .post("/api/users/login", guest)
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err.response.data));
   }
   onChange(guestLogin) {
     this.setState({ [guestLogin.target.name]: guestLogin.target.value });
-
   }
 
   render() {
@@ -50,6 +58,32 @@ class Login extends React.Component {
             id="emailAddress"
             placeholder="rosyairlines@rosy.com"
             value={this.state.email}
+            onChange={this.onChange}
+          />
+        </FormGroup>
+        <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+          <Label for="seat" className="mr-sm-2">
+            Seat Number
+          </Label>
+          <Input
+            type="seat"
+            name="seatNumber"
+            id="seatNumber"
+            placeholder="123B"
+            value={this.state.seatNumber}
+            onChange={this.onChange}
+          />
+        </FormGroup>
+        <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+          <Label for="flight" className="mr-sm-2">
+            Flight Number
+          </Label>
+          <Input
+            type="flight"
+            name="flightNumber"
+            id="flightNumber"
+            placeholder="2207"
+            value={this.state.flightNumber}
             onChange={this.onChange}
           />
         </FormGroup>
