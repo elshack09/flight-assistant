@@ -1,5 +1,5 @@
 import React from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink} from 'reactstrap';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Button, Popover, PopoverHeader, PopoverBody} from 'reactstrap';
 
 export default class Airlinenavbar extends React.Component {
   constructor(props) {
@@ -21,6 +21,7 @@ export default class Airlinenavbar extends React.Component {
       <div>
         <Navbar color="faded" light>
           <NavbarBrand href="/" className="mr-auto">Rosy Airlines</NavbarBrand>
+          <Button color="danger">Emergency</Button>
           <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
           <Collapse isOpen={!this.state.collapsed} navbar>
             <Nav navbar>

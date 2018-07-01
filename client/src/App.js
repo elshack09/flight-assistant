@@ -1,23 +1,15 @@
-import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import Homepage from './components/Homepage';
-import './App.css';
-import Emergencymodal from './components/Airlinenavbar';
-
-
-
-
-
+import React, { Component } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Airlinenavbar from "./components/Airlinenavbar";
+import Home from "./components/Home";
+import "./App.css";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-      <Emergencymodal/>
-       <Homepage />
-       
-       
-      
+        <Airlinenavbar />
+        <Home />
       </div>
     );
   }
