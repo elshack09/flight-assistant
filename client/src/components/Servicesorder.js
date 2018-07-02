@@ -1,5 +1,6 @@
 import React from "react";
 import Guestinfo from "./Guestinfo";
+import axios from "axios";
 import {
   ListGroup,
   ListGroupItem,
@@ -8,7 +9,6 @@ import {
   Row,
   Col
 } from "reactstrap";
-import axios from "axios";
 
 class Servicesorder extends React.Component {
   constructor() {
@@ -27,11 +27,10 @@ class Servicesorder extends React.Component {
   }
   render() {
     const listGuests = this.state.guestList.map((customers, i) => {
-      return(
-      <Guestinfo key={i} list={customers} />)
+      return <Guestinfo key={i} list={customers} />;
     });
     return (
-      <div  >
+      <div>
         <h1 className="display-1">Order List</h1>
         <img
           className="img-responsive m-sm-5 d-inline-block"
@@ -43,16 +42,9 @@ class Servicesorder extends React.Component {
           <Col className=" d-inline-block ">
             <ListGroup>
               <ListGroupItem active>
-                <ListGroupItemHeading><h1 className="display-3">Food</h1></ListGroupItemHeading>
-                <ListGroupItemText />
-              </ListGroupItem>
-              <ListGroupItem  >{listGuests}</ListGroupItem>
-            </ListGroup>
-          </Col>
-          <Col className=" d-inline-block">
-            <ListGroup>
-              <ListGroupItem active>
-                <ListGroupItemHeading><h1 className="display-3">Guest Info</h1></ListGroupItemHeading>
+                <ListGroupItemHeading>
+                  <h1 className="display-3">Food</h1>
+                </ListGroupItemHeading>
                 <ListGroupItemText />
               </ListGroupItem>
               <ListGroupItem>{listGuests}</ListGroupItem>
@@ -61,7 +53,20 @@ class Servicesorder extends React.Component {
           <Col className=" d-inline-block">
             <ListGroup>
               <ListGroupItem active>
-                <ListGroupItemHeading><h1 className="display-3">Mood</h1></ListGroupItemHeading>
+                <ListGroupItemHeading>
+                  <h1 className="display-3">Guest Info</h1>
+                </ListGroupItemHeading>
+                <ListGroupItemText />
+              </ListGroupItem>
+              <ListGroupItem>{listGuests}</ListGroupItem>
+            </ListGroup>
+          </Col>
+          <Col className=" d-inline-block">
+            <ListGroup>
+              <ListGroupItem active>
+                <ListGroupItemHeading>
+                  <h1 className="display-3">Mood</h1>
+                </ListGroupItemHeading>
                 <ListGroupItemText />
               </ListGroupItem>
               <ListGroupItem>{listGuests}</ListGroupItem>

@@ -1,7 +1,7 @@
 require("dotenv").config();
 const User = require("../models/users");
-const Food = require("../models/food");
-const Mood = require("../models/mood");
+const Food = require("../models/Food");
+const Mood = require("../models/Mood");
 const mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_URI);
 
