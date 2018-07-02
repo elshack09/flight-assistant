@@ -29,7 +29,7 @@ export default class Airlinenavbar extends React.Component {
                 <NavLink target="_blank" href="https://www.expedia.com/">Rosy Airlines Website</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                <NavLink target="_blank" href="https://www.tsa.gov/">TSA Webesite</NavLink>
               </NavItem>
             </Nav>
           </Collapse>

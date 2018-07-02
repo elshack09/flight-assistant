@@ -14,7 +14,7 @@ router.get("/guests", (req, res) => {
 });
 //Get request
 //Show a user
-router.get("/login/:id", (req, res) => {
+router.get("/guests/:id", (req, res) => {
   Users.findById(req.params.id)
     .then(users => {
       res.json(users);
@@ -24,7 +24,7 @@ router.get("/login/:id", (req, res) => {
 });
 // Put
   // Update user data
-  router.put("/login/:id", (req, res) => {
+  router.put("/guests/:id", (req, res) => {
     const users = {
       name: req.body.name,
       email: req.body.email,
@@ -38,7 +38,7 @@ router.get("/login/:id", (req, res) => {
   });
 //Delete request
 //Delete a user
-router.delete("/login/:id", (req, res) => {
+router.delete("/guests/:id", (req, res) => {
   Users.findByIdAndRemove(req.params.id)
     .then(users => {
       res.json(users);
@@ -48,7 +48,7 @@ router.delete("/login/:id", (req, res) => {
 });
 // Post request
 // Create new user data
-router.post("/login", (req, res) => {
+router.post("/guests", (req, res) => {
   Users.findOne({ email: req.body.email }).then(users => {
     if (users) {
       return res.status(400).json({ email: "email account already created" });

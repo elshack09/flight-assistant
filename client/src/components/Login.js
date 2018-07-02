@@ -24,12 +24,12 @@ class Login extends React.Component {
     };
     // creating users & storing in database
     axios
-      .post("/api/users/login", guest)
+      .post("/api/users/guests", guest)
       .then(res => {
         this.props.history.push("/order");
         console.log(res.data);
       })
-      .catch(err => console.log(err.res.data));
+      .catch(err => console.log(err));
   }
   onChange(guestLogin) {
     this.setState({ [guestLogin.target.name]: guestLogin.target.value });

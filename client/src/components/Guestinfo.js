@@ -17,12 +17,12 @@ class Guestinfo extends Component {
             <Badge className="mr-2" color="success">
               Name
             </Badge>
-            <Link to={`/customers/${this.state.list.i}`}>
+            <Link to={`/customer/${this.state.list.id}`}>
               <Badge className="mr-2" color="primary">
                 Update
               </Badge>
             </Link>
-            <Link to={`/customers/${this.state.list.i}`}>
+            <Link to={`api/users/guests/${this.state.list.id}`}>
               <Badge className="mr-2" color="danger">
                 Delete
               </Badge>
@@ -53,7 +53,7 @@ class Guestinfo extends Component {
             <Badge color="warning">Flight Number</Badge>
           </h3>
           <span>
-            <h1>{this.state.list.flighNumber}</h1>
+            <h1>{this.state.list.flightNumber}</h1>
           </span>
         </ul>
       </div>
