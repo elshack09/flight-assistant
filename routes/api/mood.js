@@ -14,6 +14,7 @@ router.get("/", (req, res) => {
 
 //Get request
 //Show a mood
+// test
 router.get("/mood/:id", (req, res) => {
     Mood.findById(req.params.id)
       .then(moods => {
