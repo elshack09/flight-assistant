@@ -15,7 +15,7 @@ router.get("/guests", (req, res) => {
 //Get request
 //Show a user
 router.get("/guests/:id", (req, res) => {
-  Users.findById(req.params.id)
+  Users.findByIdAndUpdate(req.params.id)
     .then(users => {
       res.json(users);
       console.log(users);
