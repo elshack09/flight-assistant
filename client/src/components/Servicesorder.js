@@ -1,4 +1,5 @@
 import React from "react";
+import Guestinfo from "./Guestinfo";
 import {
   ListGroup,
   ListGroupItem,
@@ -21,59 +22,50 @@ class Servicesorder extends React.Component {
   }
   guestLogins() {
     axios.get("/api/users/guests").then(response => {
-      this.setState({ guestList: response.data }, () => {
-        //  console.log(this.state)
-      });
+      this.setState({ guestList: response.data }, () => {});
     });
   }
   render() {
     const listGuests = this.state.guestList.map((customers, i) => {
-      return (
-        <div>
-          <ul>{customers.name}</ul>
-          <ul>{customers.email}</ul>
-          <ul>{customers.seatNumber}</ul>
-          <ul>{customers.flightNumber}</ul>
-        </div>
-      );
+      return(
+      <Guestinfo key={i} list={customers} />)
     });
     return (
-      <div>
+      <div  >
         <h1 className="display-1">Order List</h1>
+        <img
+          className="img-responsive m-sm-5 d-inline-block"
+          margin="10px"
+          src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.travelandleisure.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F1600x1000%2Fpublic%2F1445377411%2FWBAIRLINEFOOD1015-Korean.jpg%3Fitok%3D6RXVNOOk&w=700&q=85"
+          alt="airplane-dinner"
+        />
         <Row>
-          <Col>
+          <Col className=" d-inline-block ">
             <ListGroup>
               <ListGroupItem active>
-                <ListGroupItemHeading>Guest</ListGroupItemHeading>
+                <ListGroupItemHeading><h1 className="display-3">Food</h1></ListGroupItemHeading>
                 <ListGroupItemText />
               </ListGroupItem>
-              <ListGroupItem>
-                {listGuests}
-                <ListGroupItemHeading>
-                  List group item heading
-                </ListGroupItemHeading>
-                <ListGroupItemText>
-                  Donec id elit non mi porta gravida at eget metus. Maecenas sed
-                  diam eget risus varius blandit.
-                </ListGroupItemText>
-              </ListGroupItem>
-              <ListGroupItem>
-                <ListGroupItemHeading>
-                  List group item heading
-                </ListGroupItemHeading>
-                <ListGroupItemText>
-                  Donec id elit non mi porta gravida at eget metus. Maecenas sed
-                  diam eget risus varius blandit.
-                </ListGroupItemText>
-              </ListGroupItem>
+              <ListGroupItem  >{listGuests}</ListGroupItem>
             </ListGroup>
           </Col>
-          <Col>
-            {" "}
-            <img
-              src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.travelandleisure.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F1600x1000%2Fpublic%2F1445377411%2FWBAIRLINEFOOD1015-Korean.jpg%3Fitok%3D6RXVNOOk&w=700&q=85"
-              alt="airplane-dinner"
-            />
+          <Col className=" d-inline-block">
+            <ListGroup>
+              <ListGroupItem active>
+                <ListGroupItemHeading><h1 className="display-3">Guest Info</h1></ListGroupItemHeading>
+                <ListGroupItemText />
+              </ListGroupItem>
+              <ListGroupItem>{listGuests}</ListGroupItem>
+            </ListGroup>
+          </Col>
+          <Col className=" d-inline-block">
+            <ListGroup>
+              <ListGroupItem active>
+                <ListGroupItemHeading><h1 className="display-3">Mood</h1></ListGroupItemHeading>
+                <ListGroupItemText />
+              </ListGroupItem>
+              <ListGroupItem>{listGuests}</ListGroupItem>
+            </ListGroup>
           </Col>
         </Row>
       </div>

@@ -34,7 +34,7 @@ class Login extends React.Component {
 
   render() {
     return (
-      <Form inline onSubmit={this.onSubmit}>
+      <Form inline onSubmit={this.onSubmit} >
         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
           <Label for="name" className="mr-sm-2">
             Name
@@ -88,6 +88,8 @@ class Login extends React.Component {
           />
         </FormGroup>
         <Button href="">Submit</Button>
+        <Button href="/order">Next</Button>
+
       </Form>
     );
   }

@@ -14,7 +14,7 @@ const Home = props => {
     <div>
       <h1 className="display-2">Rosy Airlines Services</h1>
       <Card  body inverse style={{ backgroundColor: '#f5c16c', borderColor: '#8a79af' }}>
-        <CardImg
+        <CardImg className="img-responsive"
           top
           width="100%" height="70%"
           src="https://images.unsplash.com/photo-1494029722188-672a328c4989?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f72669fc9591f5e35a39894fbbef4f9e&auto=format&fit=crop&w=1291&q=80"
