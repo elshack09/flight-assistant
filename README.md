@@ -4,6 +4,10 @@ The Flight Assistant is a app that helps Flight Attendants better assist custome
 ## Heroku Deployed App
 https://arrogant-goose-13690.herokuapp.com/
 
+## Postman | API Development Environment
+For this project I used Postman to test out my back end routes. Utilizing this API to test my back end routes assisted me with effectively working with my database until I was able to see the data after I developed my react-router routes.
+
+
 ## Technologies Used
 ### Front-End
 * Reacstrap
