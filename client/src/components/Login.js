@@ -6,10 +6,10 @@ class Login extends React.Component {
   constructor() {
     super();
     this.state = {
-      name: '',
-      email: '',
-      seatNumber: '',
-      flightNumber: ''
+      name: "",
+      email: "",
+      seatNumber: "",
+      flightNumber: ""
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -25,8 +25,11 @@ class Login extends React.Component {
     // creating users & storing in database
     axios
       .post("/api/users/login", guest)
-      .then(res => console.log(res.data))
-      .catch(err => console.log(err.response.data));
+      .then(res => {
+        this.props.history.push("/order");
+        console.log(res.data);
+      })
+      .catch(err => console.log(err.res.data));
   }
   onChange(guestLogin) {
     this.setState({ [guestLogin.target.name]: guestLogin.target.value });
@@ -34,7 +37,7 @@ class Login extends React.Component {
 
   render() {
     return (
-      <Form inline onSubmit={this.onSubmit} >
+      <Form inline onSubmit={this.onSubmit}>
         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
           <Label for="name" className="mr-sm-2">
             Name
@@ -88,8 +91,6 @@ class Login extends React.Component {
           />
         </FormGroup>
         <Button href="">Submit</Button>
-        <Button href="/order">Next</Button>
-
       </Form>
     );
   }

@@ -21,8 +21,8 @@ class Servicesorder extends React.Component {
     this.guestLogins();
   }
   guestLogins() {
-    axios.get("/api/users/guests").then(response => {
-      this.setState({ guestList: response.data }, () => {});
+    axios.get("/api/users/guests").then(res => {
+      this.setState({ guestList: res.data }, () => {});
     });
   }
   render() {
