@@ -47,6 +47,6 @@ app.use('/api/users', users);
 app.use('/api/food', food);
 app.use('/api/mood', mood);
 
-app.listen(process.env.PORT || 3001);
+
 
 module.exports = app;
