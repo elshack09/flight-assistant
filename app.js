@@ -39,8 +39,7 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/client/build/index.html");
 });
 
-//Index
-app.get('/', (req,res) => res.send('Hello Erica'));
+
 
 // Routes
 app.use('/api/users', users);
