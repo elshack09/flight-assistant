@@ -1,10 +1,10 @@
 require("dotenv").config();
 const express = require("express");
+const path = require("path");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
 const mongoose = require("mongoose");
-mongoose.Promise = global.Promise
 mongoose.connect(process.env.MONGODB_URI);
 
 const connection = mongoose.connection;
@@ -39,6 +39,7 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/client/build/index.html");
 });
 
+// //Index
 
 
 // Routes

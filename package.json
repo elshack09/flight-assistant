@@ -12,6 +12,7 @@
     "postinstall": "cd client && npm install && npm run build"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "concurrently": "^3.6.0",
     "cookie-parser": "^1.4.3",
@@ -20,10 +21,6 @@
     "eslint-cli": "^1.1.1",
     "express": "~4.16.0",
     "mongoose": "^5.1.6",
-    "morgan": "~1.9.0",
-    "node": "^10.5.0",
-    "npm": "^6.1.0",
-    "path": "^0.12.7",
-    "postinstall": "^0.2.2"
+    "morgan": "~1.9.0"
   }
 }
