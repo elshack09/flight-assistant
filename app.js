@@ -1,11 +1,14 @@
 require("dotenv").config();
 const express = require("express");
-const path = require("path");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_URI);
+
+
+mongoose.Promise = global.Promise
+
 
 const connection = mongoose.connection;
 connection.on("connected", () => {
@@ -43,7 +46,5 @@ app.get("/", (req, res) => {
 
 
 // //Index
-
-
 
 module.exports = app;
