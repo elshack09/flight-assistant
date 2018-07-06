@@ -5,14 +5,15 @@ const Mood = require("../models/Mood");
 const mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_URI);
 
-mongoose.connection.once("open", () => {
-  console.log("Connected to Mongo!");
-});
+// Connect to Database
+mongoose.connect('mongodb://localhost/flight-attendant')
+  .then(() => {
+    console.log('connected to mongoDB')
+  })
+  .catch((err) => {
+    console.log('ERROR', err)
+  })
 
-mongoose.connection.on("error", error => {
-  console.error(`Mongo DB connection error: ${error}`);
-  process.exit(-1);
-});
 
 // user data
 User.remove({}).then(() => {

@@ -19,6 +19,8 @@
     "debug": "~2.6.9",
     "dotenv": "^6.0.0",
     "express": "~4.16.0",
+    "http-errors": "^1.6.3",
+    "method-override": "^2.3.10",
     "mongoose": "^5.1.6",
     "morgan": "~1.9.0",
     "npm": "^6.1.0"
