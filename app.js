@@ -2,6 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
+const path = require('path');
+
 const logger = require("morgan");
 const mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_URI);
